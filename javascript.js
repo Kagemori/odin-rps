@@ -13,7 +13,8 @@ function getComputerChoice(){
 
 //console.log(getComputerChoice() + " and " + getComputerChoice() + " and " + getComputerChoice());
 
-function getHumanChoice(userInput){
+function getHumanChoice(){
+    let userInput = prompt("Choose! Rock, paper or scissors?");
     userInput = String(userInput).toLowerCase();
     if(userInput == "scissors"){
         return "scissors";
@@ -22,7 +23,8 @@ function getHumanChoice(userInput){
     }else if(userInput == "rock"){
         return "rock";
     }else{
-        return "Invalid input :c";
+        console.log("Invalid input :c");
+        return getHumanChoice();
     }
 }
 
@@ -67,5 +69,5 @@ function playRound(humanChoice,computerChoice){
     }
 }
 
-console.log(playRound(getHumanChoice(prompt("Choose! Rock, paper or scissors?")),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
 console.log("Current scores\n" + "Player: " + playerScore + "  |  " + "Computer: " + computerScore);
