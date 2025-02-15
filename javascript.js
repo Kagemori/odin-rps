@@ -101,8 +101,18 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        playRound(button.id,getComputerChoice());
-        score.textContent = "Player Wins: " + playerScore + " --- Computer Wins: " + computerScore;
-        scoreboard.appendChild(score);
+        if(playerScore != 5 && computerScore != 5){
+            playRound(button.id,getComputerChoice());
+            score.textContent = "Player Wins: " + playerScore + " --- Computer Wins: " + computerScore;
+            scoreboard.appendChild(score);
+        }
+
+        if(playerScore === 5){
+            round.textContent = "You won 5 rounds! You Win!!! YIPPEE :D \n Refresh the page to play again!";
+            roundResults.appendChild(round);
+        }else if(computerScore === 5){
+            round.textContent = "The computer won 5 rounds! You Lost!!! OH NU D: \n Refresh page to try again!";
+            roundResults.appendChild(round);
+        }
     });
 });
