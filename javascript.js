@@ -26,38 +26,61 @@ function getHumanChoice(){
     }
 }
 
+const round = document.createElement("div");
+round.classList.add("round");
+
 function playRound(humanChoice,computerChoice){
     if(humanChoice == "scissors"){
         if(computerChoice == "paper"){
             playerScore++;
+            round.textContent = "You win! Scissors beats paper! :D";
+            roundResults.appendChild(round);
             return console.log("You win! Scissors beats paper! :D");
         }else if(computerChoice == "rock"){
             computerScore++;
+            round.textContent = "You lose! Rock beats scissors! D:";
+            roundResults.appendChild(round);
             return console.log("You lose! Rock beats scissors! D:");
         }else{
+            round.textContent = "It's a draw!";
+            roundResults.appendChild(round);
             return console.log("It's a draw!")
         }
     }else if(humanChoice == "paper"){
         if(computerChoice == "rock"){
             playerScore++;
+            round.textContent = "You win! Paper beats rock! :D";
+            roundResults.appendChild(round);
             return console.log("You win! Paper beats rock! :D");
         }else if(computerChoice == "scissors"){
             computerScore++;
+            round.textContent = "You lose! Scissors beats paper! D:";
+            roundResults.appendChild(round);
             return console.log("You lose! Scissors beats paper! D:");
         }else{
+            round.textContent = "It's a draw!";
+            roundResults.appendChild(round);
             return console.log("It's a draw!")
         }
     }else if(humanChoice == "rock"){
         if(computerChoice == "scissors"){
             playerScore++;
+            round.textContent = "You win! Rock beats scissors! :D";
+            roundResults.appendChild(round);
             return console.log("You win! Rock beats scissors! :D");
         }else if(computerChoice == "paper"){
             computerScore++;
+            round.textContent = "You lose! Paper beats rock! D:";
+            roundResults.appendChild(round);
             return console.log("You lose! Paper beats rock! D:");
         }else{
+            round.textContent = "It's a draw!";
+            roundResults.appendChild(round);
             return console.log("It's a draw!")
         }
     }else{
+        round.textContent = "Erm... What the scallop...";
+        roundResults.appendChild(round);
         return console.log("Erm... What the scallop...");
     }
 }
