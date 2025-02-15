@@ -78,6 +78,8 @@ const buttons = document.querySelectorAll("button");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        playRound(button.id,getComputerChoice())
+        playRound(button.id,getComputerChoice());
+        score.textContent = "Player Wins: " + playerScore + " --- Computer Wins: " + computerScore;
+        scoreboard.appendChild(score);
     });
 });
